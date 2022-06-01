@@ -22,7 +22,10 @@
     "react-native-screens": "~3.10.1",
     "@react-navigation/native": "*",
     "@react-navigation/native-stack": "*",
-    "react-native-safe-area-context": "3.3.2"
+    "react-native-safe-area-context": "3.3.2",
+    "react-native-switch-toggles": "*",
+    "react-native-reanimated": "~2.3.1",
+    "react-native-gesture-handler": "~2.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
