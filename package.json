@@ -20,12 +20,12 @@
     "react-native-paper": "4.9.2",
     "expo-linear-gradient": "~11.0.2",
     "react-native-screens": "~3.10.1",
-    "@react-navigation/native": "*",
-    "@react-navigation/native-stack": "*",
-    "react-native-safe-area-context": "3.3.2",
-    "react-native-switch-toggles": "*",
     "react-native-reanimated": "~2.3.1",
-    "react-native-gesture-handler": "~2.1.0"
+    "@react-navigation/native": "*",
+    "react-native-switch-toggles": "*",
+    "react-native-gesture-handler": "~2.1.0",
+    "@react-navigation/native-stack": "*",
+    "react-native-safe-area-context": "3.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"

@@ -8,6 +8,8 @@ import { Provider as PaperProvider } from 'react-native-paper';
 import Welcome from './components/Welcome';
 import SetupWallet from './components/SetupWallet';
 import CreatePassword from './components/CreatePassword.js'
+import SecureWallet from './components/SecureWallet'
+import SeedPhrase from './components/SeedPhrase'
 
 
 // or any pure javascript modules available in npm
@@ -25,7 +27,7 @@ const Stack = createNativeStackNavigator();
           header: () => null,
           contentStyle: { backgroundColor: 'white' },
         }}>
-          <Stack.Screen name="" component={CreatePassword} />
+          <Stack.Screen name="" component={SeedPhrase} />
           </Stack.Navigator>
     </NavigationContainer>
     </PaperProvider>

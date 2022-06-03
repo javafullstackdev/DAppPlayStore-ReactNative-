@@ -28,12 +28,6 @@ export default function CreatePassword() {
       <View style={styles.fixCenter}>
         <Text style={{fontSize:24,fontWeight:700, fontFamily:'Roboto'}}>Create Password</Text>
         <Text style={{fontSize:14,fontWeight:400, fontFamily:'Roboto',textAlign:'center',color:'#A5AEC6', marginTop:20}}>This password will unlock your DAPP PLAY STORE wallet only on this device</Text>
-
-            <TouchableOpacity style={styles.createroundButton}>
-              <Text style = {styles.createbutton}>
-                Create a New Wallet
-                </Text>
-            </TouchableOpacity>
       </View>
     <Text style={styles.descText} >New Password</Text>  
     <PasswordField verifyPassword={text=>verifyPassword(text)}/>
@@ -59,9 +53,16 @@ export default function CreatePassword() {
         />
       <Text style={{fontSize:12,fontFamily:'Roboto',color:'#A5AEC6'}}>I understand that MetaMask cannot recover this password for me.<Text style={{color:'#2862F8'}}>Learn More</Text> </Text>
     </View>
-    <View style={{flexDirection:'row',marginTop:30}}>
-      <View style={{heigh:80, width:80, s:5, backgroundColor:'#2862F8'}}></View>
+    <View style={{flexDirection:'row',marginTop:50,height:6,justifyContent: 'center',}}>
+      <TouchableOpacity style={{width:30,borderRadius:3,backgroundColor:'#2862F8',marginRight:10}}/>
+      <TouchableOpacity style={{width:6,borderRadius:3,backgroundColor:'#2862F8',marginRight:10}}/>
+      <TouchableOpacity style={{width:6,borderRadius:3,backgroundColor:'#2862F8',marginRight:10}}/>     
     </View>
+    <TouchableOpacity style={styles.createroundButton}>
+       <Text style = {styles.createbutton}>
+          Create a New Wallet
+        </Text>
+    </TouchableOpacity>
     
   </View>
 
