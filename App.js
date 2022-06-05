@@ -10,7 +10,8 @@ import SetupWallet from './components/SetupWallet';
 import CreatePassword from './components/CreatePassword.js'
 import SecureWallet from './components/SecureWallet'
 import SeedPhrase from './components/SeedPhrase'
-
+import Congratulations from './components/Congratulations'
+import FinishWallet from './components/FinishWallet'
 
 // or any pure javascript modules available in npm
 import { Card } from 'react-native-paper';
@@ -27,7 +28,7 @@ const Stack = createNativeStackNavigator();
           header: () => null,
           contentStyle: { backgroundColor: 'white' },
         }}>
-          <Stack.Screen name="" component={SeedPhrase} />
+          <Stack.Screen name="" component={FinishWallet} />
           </Stack.Navigator>
     </NavigationContainer>
     </PaperProvider>
