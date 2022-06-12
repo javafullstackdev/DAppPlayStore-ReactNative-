@@ -5,7 +5,7 @@ import Constants from 'expo-constants';
 import { useFonts } from 'expo-font';
 
 const spinValue = new Animated.Value(0);
-export default function SetupWallet() {
+export default function SetupWallet({navigation}) {
 
   React.useEffect(() => {
     Animated.loop(
@@ -25,7 +25,9 @@ export default function SetupWallet() {
   return (
     
     <View style={styles.container}>
-      <Image source={require('../assets/Vector-backward.png')}/>
+      <TouchableOpacity onPress={()=>navigation.goBack()}>
+        <Image source={require('../assets/Vector-backward.png')} />
+      </TouchableOpacity>
       <View style={styles.fixCenter}>
       <Text style={{fontSize:24,fontWeight:700, fontFamily:'Roboto'}}>Setup Your Wallet</Text>
       <Text style={{fontSize:14,fontWeight:400, fontFamily:'Roboto',textAlign:'center',color:'#A5AEC6', marginTop:20}}>Import an existing wallet or create a new one</Text>
@@ -57,8 +59,8 @@ export default function SetupWallet() {
               Synch With DAPP PLAY STORE Extension
               </Text>
           </TouchableOpacity>
-            <TouchableOpacity style={styles.createroundButton}>
-            <Text style = {styles.createbutton}>
+          <TouchableOpacity style={styles.createroundButton} onPress={()=>navigation.navigate('CreatePassword')}>
+            <Text style = {styles.createbutton} >
               Create a New Wallet
               </Text>
           </TouchableOpacity>
@@ -103,18 +105,19 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 10,
     marginTop:30,
-    background:'white',
+    backgroundColor:'white',
     border: '1px solid #2862F8',
   },
   createroundButton:{
     width:"100%",
     height: 44,
+    
     justifyContent: 'center',
     alignItems: 'center',
     padding: 10,
     borderRadius: 10,
     marginTop:30,
-    background:'#2862F8',
+    backgroundColor:'#2862F8',
     border: '1px solid #2862F8',
   },
   fixCenter:{

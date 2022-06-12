@@ -1,9 +1,11 @@
 import React,{useState} from 'react';
-import { StyleSheet,View, Image, TouchableOpacity,Text, CheckBox,Button } from 'react-native';
+import { StyleSheet,View, Image, TouchableOpacity,Text,Button } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import PasswordField from './PasswordField';
 import Switch from 'react-native-switch-toggles';
-export default function CreatePassword() {
+import CheckBox from "expo-checkbox";
+
+export default function CreatePassword({navigation}) {
 
   const [password,setPassword]=useState('');
   const [backcolor1,setBackColor]=useState('#A5AEC6');
@@ -24,13 +26,15 @@ export default function CreatePassword() {
   return (
     <View style={styles.container}>
     
-      <Image source={require('../assets/Vector-backward.png')}/>
+      <TouchableOpacity onPress={()=>navigation.goBack()}>
+        <Image source={require('../assets/Vector-backward.png')} />
+      </TouchableOpacity>
       <View style={styles.fixCenter}>
         <Text style={{fontSize:24,fontWeight:700, fontFamily:'Roboto'}}>Create Password</Text>
         <Text style={{fontSize:14,fontWeight:400, fontFamily:'Roboto',textAlign:'center',color:'#A5AEC6', marginTop:20}}>This password will unlock your DAPP PLAY STORE wallet only on this device</Text>
       </View>
     <Text style={styles.descText} >New Password</Text>  
-    <PasswordField verifyPassword={text=>verifyPassword(text)}/>
+    <PasswordField/>
     <Text style={styles.descText} >New Password</Text>  
     <PasswordField/>
     <View style={styles.strongValidation}>
@@ -58,7 +62,7 @@ export default function CreatePassword() {
       <TouchableOpacity style={{width:6,borderRadius:3,backgroundColor:'#2862F8',marginRight:10}}/>
       <TouchableOpacity style={{width:6,borderRadius:3,backgroundColor:'#2862F8',marginRight:10}}/>     
     </View>
-    <TouchableOpacity style={styles.createroundButton}>
+    <TouchableOpacity style={styles.createroundButton} onPress={()=>navigation.navigate('SecureWallet')}>
        <Text style = {styles.createbutton}>
           Create a New Wallet
         </Text>
@@ -105,7 +109,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 10,
     marginTop:30,
-    background:'#2862F8',
+    backgroundColor:'#2862F8',
     border: '1px solid #2862F8',
   },
   fixCenter:{

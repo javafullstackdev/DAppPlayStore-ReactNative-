@@ -56,7 +56,7 @@ export default class FinishWallet extends React.Component {
 
           <View style={{flexDirection:'row',marginTop:100}}>
             <View style={{width:'50%'}}>
-              <TouchableOpacity style={styles.textButton1}>
+              <TouchableOpacity style={styles.textButton1} onPress={()=>this.props.navigation.goBack()}>
                 <Text style={{fontFamily:'Roboto', fontSize:14,color:'#2862F8'}}>No Thanks</Text>
               </TouchableOpacity>
             </View>

@@ -5,7 +5,7 @@ import Constants from 'expo-constants';
 import { useFonts } from 'expo-font';
 
 const spinValue = new Animated.Value(0);
-export default function SeedPhrase() {
+export default function SeedPhrase({navigation}) {
 
 
   
@@ -13,7 +13,9 @@ export default function SeedPhrase() {
   return (
     
     <View style={styles.container}>
-      <Image source={require('../assets/Vector-backward.png')}/>
+      <TouchableOpacity onPress={()=>navigation.goBack()}>
+        <Image source={require('../assets/Vector-backward.png')} />
+      </TouchableOpacity>
       <View style={styles.fixCenter}>
       <Text style={{fontSize:24,fontWeight:700, fontFamily:'Roboto'}}>Secure Your Wallet</Text>
          <Text style={{color:'#A5AEC6', fontFamily:'Roboto',fontSize:'14', marginTop:30}}>Secure your Wallet's <Text style={{color:'#2862F8'}}>Seed Phrase</Text></Text>
@@ -44,7 +46,7 @@ export default function SeedPhrase() {
         <Text style={styles.text, [{marginTop:10,marginRight:40}]}> <Text>{'\u2022'}</Text>  Store in bank vault</Text>
         <Text style={styles.text, [{marginTop:10,marginRight:40}]}> <Text>{'\u2022'}</Text>  Store in safe</Text>
         <Text style={styles.text, [{marginTop:10,marginRight:40}]}> <Text>{'\u2022'}</Text>  Store in secure place</Text>
-        <TouchableOpacity style={styles.startButton} >
+        <TouchableOpacity style={styles.startButton} onPress={()=>navigation.navigate('Congratulations')}>
           <Text style={{fontFamily:'Roboto',fontSize:16, fontWeight:'500', color:'white'}}>Start
           </Text>
         </TouchableOpacity>

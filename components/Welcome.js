@@ -5,7 +5,7 @@ import Constants from 'expo-constants';
 import { useFonts } from 'expo-font';
 
 const spinValue = new Animated.Value(0);
-export default function Welcome() {
+export default function Welcome({navigation}) {
 
   React.useEffect(() => {
     Animated.loop(
@@ -61,11 +61,11 @@ export default function Welcome() {
       <Text style={styles.textDescription}>Trusted by millions, Metamask is a secure wallet, making the world of web3 accessible to all
       </Text>
       <View style={styles.fixCenter}>
-      <TouchableOpacity style={styles.roundButton}>
+      <TouchableOpacity style={styles.roundButton} onPress={()=>navigation.navigate('SetupWallet')}>
           <Text style = {styles.button}>
             Get Started
             </Text>
-            <Image source={require('../assets/Vector-forward.png')}></Image>
+            <Image source={require('../assets/Vector-forward.png')} ></Image>
         </TouchableOpacity>
         </View>
       

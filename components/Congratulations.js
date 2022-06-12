@@ -5,7 +5,7 @@ import Constants from 'expo-constants';
 import { useFonts } from 'expo-font';
 
 const spinValue = new Animated.Value(0);
-export default function Congratulations() {
+export default function Congratulations({navigation}) {
 
   React.useEffect(() => {
     Animated.loop(
@@ -25,7 +25,9 @@ export default function Congratulations() {
   return (
     
     <View style={styles.container}>
-      <Image source={require('../assets/Vector-backward.png')}/>
+      <TouchableOpacity onPress={()=>navigation.goBack()}>
+        <Image source={require('../assets/Vector-backward.png')} />
+      </TouchableOpacity>
       <View style={styles.fixCenter}>
       <Text style={{fontSize:24,fontWeight:700, fontFamily:'Roboto'}}>Congratulations</Text>
           <View style={styles.logoGraphic}>
@@ -57,7 +59,7 @@ export default function Congratulations() {
               <TouchableOpacity style={{width:6,borderRadius:3,backgroundColor:'#2862F8',marginRight:10}}/>
               <TouchableOpacity style={{width:30,borderRadius:3,backgroundColor:'#2862F8',marginRight:10}}/>     
             </View>
-            <TouchableOpacity style={styles.createroundButton}>
+            <TouchableOpacity style={styles.createroundButton} onPress={()=>navigation.navigate('FinishWallet')}>
               <Text style = {styles.createbutton}>
                 Done
               </Text>

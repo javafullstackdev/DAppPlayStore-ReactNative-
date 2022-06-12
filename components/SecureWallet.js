@@ -5,7 +5,7 @@ import Constants from 'expo-constants';
 import { useFonts } from 'expo-font';
 
 const spinValue = new Animated.Value(0);
-export default function SecureWallet() {
+export default function SecureWallet({navigation}) {
 
   React.useEffect(() => {
     Animated.loop(
@@ -25,7 +25,9 @@ export default function SecureWallet() {
   return (
     
     <View style={styles.container}>
-      <Image source={require('../assets/Vector-backward.png')}/>
+      <TouchableOpacity onPress={()=>navigation.goBack()}>
+        <Image source={require('../assets/Vector-backward.png')} />
+      </TouchableOpacity>
       <View style={styles.fixCenter}>
       <Text style={{fontSize:24,fontWeight:700, fontFamily:'Roboto'}}>Secure Your Wallet</Text>
           <View style={styles.logoGraphic}>
@@ -58,9 +60,9 @@ export default function SecureWallet() {
               <TouchableOpacity style={{width:6,borderRadius:3,backgroundColor:'#2862F8',marginRight:10}}/>
               <TouchableOpacity style={{width:6,borderRadius:3,backgroundColor:'#2862F8',marginRight:10}}/>     
             </View>
-            <TouchableOpacity style={styles.createroundButton}>
-            <Text style = {styles.createbutton}>
-              Create a New Wallet
+            <TouchableOpacity style={styles.createroundButton} onPress={()=>navigation.navigate('SeedPhrase')}>
+            <Text style = {styles.createbutton} >
+              Get Started
               </Text>
           </TouchableOpacity>
 
@@ -101,7 +103,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 10,
     marginTop:30,
-    background:'#2862F8',
+    backgroundColor:'#2862F8',
     border: '1px solid #2862F8',
   },
   fixCenter:{

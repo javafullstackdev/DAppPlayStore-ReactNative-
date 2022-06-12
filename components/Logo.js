@@ -1,9 +1,21 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { StyleSheet,View, Image } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-export default function Logo() {
+
+export default function Logo({navigation}) {
+
+    useEffect(() => {
+    setTimeout(() => {
+      navigation.navigate('Welcome')
+    }, 1000)
+  }, [])
+
+  let timer = null;
+
+
   return (
+
     <View style={styles.background}>
       <LinearGradient 
       colors={['#2862F8', '#4BADE4']} 
