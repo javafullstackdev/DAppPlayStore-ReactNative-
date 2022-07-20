@@ -33,6 +33,8 @@ export default function CreatePassword({navigation}) {
         <Text style={{fontSize:24,fontWeight:700, fontFamily:'Roboto'}}>Create Password</Text>
         <Text style={{fontSize:14,fontWeight:400, fontFamily:'Roboto',textAlign:'center',color:'#A5AEC6', marginTop:20}}>This password will unlock your DAPP PLAY STORE wallet only on this device</Text>
       </View>
+
+    
     <Text style={styles.descText} >New Password</Text>  
     <PasswordField/>
     <Text style={styles.descText} >New Password</Text>  
@@ -45,29 +47,23 @@ export default function CreatePassword({navigation}) {
       <View style={[styles.dot, { backgroundColor: backcolor1 }]} />
       <Text style={[ { color: backcolor1 ,fontSize:14, marginLeft:10,fontFamily:'Roboto'}]}>At least 1 capital letter</Text>
     </View>
-    <View style={{flexDirection:'row',marginTop:50}}>
-      <Text style={{fontFamily:'Roboto',fontSize:17}}>Enable Sign In with Face ID?</Text>
-      <Switch style={{marginRight:0}}size={20} value={isEnabled} onChange={(value) => setIsEnabled(value)} activeTrackColor={"#45D058"}/>
-    </View >
-    <View style={{flexDirection:'row',marginTop:30}}>
+
+    <View style={{flexDirection:'row',marginTop:90}}>
        <CheckBox
           value={isSelected}
           onValueChange={setSelection}
           style={{marginTop:3, marginRight:10}}
         />
-      <Text style={{fontSize:12,fontFamily:'Roboto',color:'#A5AEC6'}}>I understand that MetaMask cannot recover this password for me.<Text style={{color:'#2862F8'}}>Learn More</Text> </Text>
+     
+      <Text style={{fontSize:12,fontFamily:'Roboto',color:'#A5AEC6'}}>By creating new wallet, you agree to the Terms Of Use and Privacy Policy of DAPP PLAY STORE. </Text>
     </View>
-    <View style={{flexDirection:'row',marginTop:50,height:6,justifyContent: 'center',}}>
-      <TouchableOpacity style={{width:30,borderRadius:3,backgroundColor:'#2862F8',marginRight:10}}/>
-      <TouchableOpacity style={{width:6,borderRadius:3,backgroundColor:'#2862F8',marginRight:10}}/>
-      <TouchableOpacity style={{width:6,borderRadius:3,backgroundColor:'#2862F8',marginRight:10}}/>     
-    </View>
+    
     <TouchableOpacity style={styles.createroundButton} onPress={()=>navigation.navigate('SecureWallet')}>
        <Text style = {styles.createbutton}>
           Create a New Wallet
         </Text>
     </TouchableOpacity>
-    
+
   </View>
 
   );
