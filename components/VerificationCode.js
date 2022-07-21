@@ -28,7 +28,7 @@ export default function VerificationCode({navigation}) {
           </Text>
       <TouchableOpacity style={styles.createroundButton} onPress={()=>navigation.navigate('CreatePassword')}>
           <Text style = {styles.createbutton} >
-                Send Verification Code
+                Complete
           </Text>
       </TouchableOpacity>
      </View>
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 10,
     borderRadius: 10,
-    marginTop:303,
+    marginTop:199,
     backgroundColor:'#2862F8',
     border: '1px solid #2862F8',
   },
@@ -76,7 +76,11 @@ const styles = StyleSheet.create({
 
   },
   resendButton:{
+    marginTop:20,
     fontSize:14,
+    fontFamily:'Roboto',
+    fontWeight:700,
+    color:'#2862F8'
     
   },
 

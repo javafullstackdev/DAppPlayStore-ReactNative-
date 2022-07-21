@@ -14,6 +14,7 @@ import Congratulations from './components/Congratulations'
 import FinishWallet from './components/FinishWallet'
 import VerifyIdentity from'./components/VerifyIdentity'
 import VerificationCode from './components/VerificationCode'
+import AllProduct from './components/ProductComponents/AllProducts.js'
 
 // or any pure javascript modules available in npm
 import { Card } from 'react-native-paper';
@@ -42,7 +43,7 @@ const Stack = createNativeStackNavigator();
 //     //       </Stack.Navigator>
 //     // </NavigationContainer>
 //     </PaperProvider>
-<VerificationCode/>
+<AllProduct/>
 
   );
 }
